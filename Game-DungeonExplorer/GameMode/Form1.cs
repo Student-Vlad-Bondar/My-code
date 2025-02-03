@@ -114,8 +114,16 @@ namespace GameMode
             };
             timer.Start();
         }
-        private const int BossHealth = 55;
-        private const int RegularEnemyHealth = 20;
+        public static class GameConfig
+        {
+            public static readonly string BossImagePath = "C:\\Users\\Vlad\\source\\repos\\Універ\\Курсові роботи\\ООП\\Game-DungeonExplorer\\Image\\boss.png";
+            public static readonly string RegularEnemyImagePath = "C:\\Users\\Vlad\\source\\repos\\Універ\\Курсові роботи\\ООП\\Game-DungeonExplorer\\Image\\Ghibli.png";
+            public static readonly string ChestImagePath = "C:\\Users\\Vlad\\source\\repos\\Універ\\Курсові роботи\\ООП\\Game-DungeonExplorer\\Image\\chest.png";
+
+            public const int BossHealth = 55;
+            public const int RegularEnemyHealth = 20;
+        }
+        
         private void SpawnEnemy()
         {
             if (backgroundImages[currentBackgroundImageIndex] == backgroundImages[2] || backgroundImages[currentBackgroundImageIndex] == backgroundImages[4])
@@ -125,11 +133,11 @@ namespace GameMode
             Image enemyImage;
             if (backgroundImages[currentBackgroundImageIndex] == backgroundImages[3])
             {
-                enemyImage = Image.FromFile("C:\\Users\\Vlad\\source\\repos\\Універ\\Курсові роботи\\ООП\\Game-DungeonExplorer\\Image\\boss.png");
+                enemyImage = Image.FromFile(GameConfig.BossImagePath);
             }
             else
             {
-                enemyImage = Image.FromFile("C:\\Users\\Vlad\\source\\repos\\Універ\\Курсові роботи\\ООП\\Game-DungeonExplorer\\Image\\Ghibli.png");
+                enemyImage = Image.FromFile(GameConfig.RegularEnemyImagePath);
             }
             enemyPictureBox = new PictureBox
             {
@@ -143,7 +151,7 @@ namespace GameMode
             enemyPictureBox.BackColor = Color.Transparent;
             this.Controls.Add(enemyPictureBox);
 
-            gameManager.GameState.Enemy.Health = backgroundImages[currentBackgroundImageIndex] == backgroundImages[3] ? BossHealth : RegularEnemyHealth;
+            gameManager.GameState.Enemy.Health = backgroundImages[currentBackgroundImageIndex] == backgroundImages[3] ? GameConfig.BossHealth : GameConfig.RegularEnemyHealth;
         }
         private void SpawnChest()
         {
@@ -151,7 +159,7 @@ namespace GameMode
             labelHeroDef.Visible = false;
             labelEnemiesHealth.Visible = false;
             labelEnemiesDef.Visible = false;
-            Image chestImage = Image.FromFile("C:\\Users\\Vlad\\source\\repos\\Універ\\Курсові роботи\\ООП\\Game-DungeonExplorer\\Image\\chest.png");
+            Image chestImage = Image.FromFile(GameConfig.ChestImagePath);
             chestPictureBox = new PictureBox
             {
                 Image = chestImage,
