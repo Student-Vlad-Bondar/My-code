@@ -108,6 +108,8 @@ namespace GameMode
             };
             timer.Start();
         }
+        private const int BossHealth = 55;
+        private const int RegularEnemyHealth = 20;
         private void SpawnEnemy()
         {
             if (backgroundImages[currentBackgroundImageIndex] == backgroundImages[2] || backgroundImages[currentBackgroundImageIndex] == backgroundImages[4])
@@ -135,7 +137,7 @@ namespace GameMode
             enemyPictureBox.BackColor = Color.Transparent;
             this.Controls.Add(enemyPictureBox);
 
-            gameManager.GameState.Enemy.Health = backgroundImages[currentBackgroundImageIndex] == backgroundImages[3] ? 55 : 20;
+            gameManager.GameState.Enemy.Health = backgroundImages[currentBackgroundImageIndex] == backgroundImages[3] ? BossHealth : RegularEnemyHealth;
         }
         private void SpawnChest()
         {
