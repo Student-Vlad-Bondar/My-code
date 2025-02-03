@@ -28,10 +28,16 @@ namespace GameMode
         private int userId;
         private Database database;
 
-        public Game(PictureBox selectedPictureBox, int userId, Database database)
+        public class GameSettings
+        {
+            public PictureBox SelectedPictureBox { get; set; }
+            public int UserId { get; set; }
+            public Database Database { get; set; }
+        }
+        public Game(GameSettings settings)
         {
             InitializeComponent();
-            InitializeHero(selectedPictureBox);
+            InitializeHero(settings.SelectedPictureBox);
             pictureBoxPause.BackColor = Color.Transparent;
             labelHeroHealth.BackColor = Color.Transparent;
             labelEnemiesHealth.BackColor = Color.Transparent;
@@ -39,8 +45,8 @@ namespace GameMode
             labelEnemiesDef.BackColor = Color.Transparent;
             this.FormBorderStyle = FormBorderStyle.None;
             this.StartPosition = FormStartPosition.CenterScreen;
-            this.userId = userId;
-            this.database = database;
+            this.userId = settings.UserId;
+            this.database = settings.Database;
             gameManager = new GameManager(HeroTurnFinished, EnemyTurnFinished, UserSession.UserId, database);
             UpdateHealthLabels();
             SpawnEnemy();
