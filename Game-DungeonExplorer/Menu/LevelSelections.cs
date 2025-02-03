@@ -1,15 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using GameMode;
 using SQLite;
+using static GameMode.Game;
 
 namespace Menu
 {
@@ -40,7 +34,14 @@ namespace Menu
         {
             if (lastClickedPictureBox != null)
             {
-                Game game = new Game(lastClickedPictureBox, userId, database);
+                var gameSettings = new GameSettings
+                {
+                    SelectedPictureBox = lastClickedPictureBox,
+                    UserId = userId,
+                    Database = database
+                };
+
+                Game game = new Game(gameSettings);
                 game.Show();
                 this.Hide();
             }
