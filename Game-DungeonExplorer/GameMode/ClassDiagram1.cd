@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="GameMode.Defeat">
+    <Position X="3.5" Y="2.25" Width="1.75" />
+    <Members>
+      <Field Name="components" Hidden="true" />
+      <Method Name="Dispose" Hidden="true" />
+      <Method Name="InitializeComponent" Hidden="true" />
+      <Field Name="pictureBox1" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAACAAAAAAAACAAAACAAAAAAAAACAAAABAAAA=</HashCode>
+      <FileName>Defeat.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameMode.Game">
+    <Position X="0.5" Y="0.5" Width="2.75" />
+    <Members>
+      <Field Name="components" Hidden="true" />
+      <Method Name="Dispose" Hidden="true" />
+      <Method Name="InitializeComponent" Hidden="true" />
+      <Field Name="labelEnemiesDef" Hidden="true" />
+      <Field Name="labelEnemiesHealth" Hidden="true" />
+      <Field Name="labelHeroDef" Hidden="true" />
+      <Field Name="labelHeroHealth" Hidden="true" />
+      <Field Name="pictureBoxPause" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AEYhAgIAhCAQAAhICEGGgAACEBAAQSgkBCAQBBAwjBE=</HashCode>
+      <FileName>Form1.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameMode.MenuPause">
+    <Position X="3.5" Y="0.5" Width="2" />
+    <Members>
+      <Field Name="components" Hidden="true" />
+      <Method Name="Dispose" Hidden="true" />
+      <Method Name="InitializeComponent" Hidden="true" />
+      <Field Name="pictureBox1" Hidden="true" />
+      <Field Name="pictureBoxExit" Hidden="true" />
+      <Field Name="pictureBoxResume" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAACAAAACAAACAAAAgAQAAABAQAA=</HashCode>
+      <FileName>MenuPause.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameMode.Program">
+    <Position X="3.5" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="System.Windows.Forms.Form" Collapsed="true">
+    <Position X="4.25" Y="9.25" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
